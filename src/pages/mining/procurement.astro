@@ -1,0 +1,13 @@
+---
+// src/pages/mining/procurement.astro
+import MiningLayout from '../../layouts/MiningLayout.astro';
+import ProcurementForm from '../../components/mining/ProcurementForm.jsx';
+---
+
+<MiningLayout title="BLACK FORGE | RFQ Terminal">
+  
+  <main class="px-3 md:px-4 py-8 md:py-24 min-h-[80vh] md:min-h-screen flex items-start md:items-center justify-center bg-[#E5E5E5]">
+    <ProcurementForm client:load />
+  </main>
+
+</MiningLayout>

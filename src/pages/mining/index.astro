@@ -1,0 +1,98 @@
+---
+// src/pages/mining/index.astro
+import MiningLayout from '../../layouts/MiningLayout.astro';
+import SpecSheetGrid from '../../components/mining/SpecSheetGrid.jsx';
+---
+
+<MiningLayout title="BLACK FORGE | Underground Supply">
+  
+  <!-- HERO MANIFESTO -->
+  <main class="px-4 md:px-6 py-16 md:py-32 flex flex-col md:flex-row gap-8 md:gap-12 border-b border-black bg-white">
+    <div class="md:w-1/2">
+      <h1 class="font-sans font-bold text-4xl md:text-7xl uppercase tracking-tighter leading-[0.9]">
+        Mining <br/> Supply.
+      </h1>
+      <p class="font-mono text-xs md:text-sm mt-6 md:mt-8 opacity-70 uppercase tracking-widest text-[#FFD700] bg-black inline-block px-3 md:px-4 py-2">
+        Reliable supply. Mine-ready equipment. Underground focused.
+      </p>
+    </div>
+    <div class="md:w-1/2 flex flex-col justify-end">
+      <p class="font-mono text-sm md:text-base leading-relaxed max-w-lg border-l border-black pl-4 md:pl-6 mb-4 md:mb-6 font-bold">
+        Supplying the tools, equipment, and essentials that keep underground operations moving.
+      </p>
+      <p class="font-mono text-xs md:text-sm leading-relaxed max-w-lg border-l border-black pl-4 md:pl-6 opacity-80 mb-4 md:mb-6">
+        Black Forge is a dedicated supplier to the underground mining industry, providing reliable tools, safety gear, consumables, and critical support equipment for demanding below-surface environments.
+      </p>
+      <p class="font-mono text-xs md:text-sm leading-relaxed max-w-lg border-l border-black pl-4 md:pl-6 opacity-80">
+        Built around the realities of underground work, we focus on delivering products that support safety, productivity, and operational continuity.
+      </p>
+    </div>
+  </main>
+
+  <!-- ABOUT US -->
+  <section class="px-4 md:px-6 py-10 md:py-16 border-b border-black">
+    <div class="max-w-4xl">
+      <h2 class="font-sans font-bold text-2xl md:text-3xl uppercase tracking-tighter mb-4 md:mb-6">About Us</h2>
+      <p class="font-mono text-xs md:text-sm leading-relaxed mb-3 md:mb-4">
+        At Black Forge, we strictly serve the underground mining sector.
+      </p>
+      <p class="font-mono text-xs md:text-sm leading-relaxed mb-3 md:mb-4 opacity-80">
+        We understand the conditions, pressures, and safety demands that come with underground operations. That's why we supply dependable products suited for daily use in tough mining environments, from essential tools and PPE to ventilation, hoses, pumps, lighting, and maintenance supplies.
+      </p>
+      <p class="font-mono text-xs md:text-sm leading-relaxed font-bold">
+        Whether you're supporting development, production, maintenance, or site stores, Black Forge is your trusted underground supply partner.
+      </p>
+    </div>
+  </section>
+
+  <!-- MOUNT THE REACT INVENTORY GRID (What We Supply) -->
+  <SpecSheetGrid client:load />
+
+  <!-- WHY BLACK FORGE -->
+  <section class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 border-b border-black bg-white">
+    <div class="p-4 md:p-8 border-b lg:border-b-0 border-r border-black">
+      <h3 class="font-bold uppercase text-sm md:text-xl mb-2 md:mb-4 text-[#FFD700] bg-black inline-block px-2 py-1">Underground Focused</h3>
+      <p class="font-mono text-[10px] md:text-xs leading-relaxed opacity-80">We don't supply for every industry, we focus on the needs of underground mining.</p>
+    </div>
+    <div class="p-4 md:p-8 border-b lg:border-b-0 lg:border-r border-black">
+      <h3 class="font-bold uppercase text-sm md:text-xl mb-2 md:mb-4 text-[#FFD700] bg-black inline-block px-2 py-1">Reliable Supply</h3>
+      <p class="font-mono text-[10px] md:text-xs leading-relaxed opacity-80">We understand the urgency of downtime, shutdowns, and production schedules.</p>
+    </div>
+    <div class="p-4 md:p-8 border-r border-black">
+      <h3 class="font-bold uppercase text-sm md:text-xl mb-2 md:mb-4 text-[#FFD700] bg-black inline-block px-2 py-1">Safety Driven</h3>
+      <p class="font-mono text-[10px] md:text-xs leading-relaxed opacity-80">We prioritize products that support safe and compliant underground work.</p>
+    </div>
+    <div class="p-4 md:p-8">
+      <h3 class="font-bold uppercase text-sm md:text-xl mb-2 md:mb-4 text-[#FFD700] bg-black inline-block px-2 py-1">Practical Support</h3>
+      <p class="font-mono text-[10px] md:text-xs leading-relaxed opacity-80">We help mines source the right equipment for real operating conditions underground.</p>
+    </div>
+  </section>
+
+  <!-- WHO WE SERVE & COMMITMENT -->
+  <section class="grid grid-cols-1 md:grid-cols-2 border-b border-black">
+    <div class="p-5 md:p-16 border-b md:border-b-0 md:border-r border-black">
+      <h2 class="font-sans font-bold text-2xl md:text-3xl uppercase tracking-tighter mb-6 md:mb-8">Who We Serve</h2>
+      <ul class="font-mono text-xs md:text-sm space-y-2 md:space-y-3 opacity-80 list-disc list-inside">
+        <li>Underground mines</li>
+        <li>Mining contractors</li>
+        <li>Engineering teams</li>
+        <li>Maintenance departments</li>
+        <li>Safety teams</li>
+        <li>Procurement and mine stores</li>
+      </ul>
+    </div>
+    <div class="p-5 md:p-16 bg-black text-white flex flex-col justify-center">
+      <h2 class="font-sans font-bold text-2xl md:text-3xl uppercase tracking-tighter mb-4 md:mb-6 text-[#FFD700]">Our Commitment</h2>
+      <p class="font-mono text-xs md:text-sm leading-relaxed mb-4 md:mb-6">
+        At Black Forge, we believe supply is more than delivery, it's support.
+      </p>
+      <p class="font-mono text-xs md:text-sm leading-relaxed opacity-80 mb-6 md:mb-8">
+        We work to ensure underground operations have access to the equipment and essentials they need, when they need them. Our goal is simple: to be a dependable supply partner that mines can trust.
+      </p>
+      <a href="/mining/procurement" class="inline-block bg-[#FFD700] text-black px-6 md:px-8 py-3 md:py-4 font-mono text-xs md:text-sm uppercase font-bold tracking-widest hover:bg-white hover:text-black transition-colors self-start">
+        Initiate Request For Quote
+      </a>
+    </div>
+  </section>
+
+</MiningLayout>

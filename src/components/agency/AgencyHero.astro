@@ -1,0 +1,18 @@
+---
+// src/components/agency/AgencyHero.astro
+---
+<section class="min-h-[80vh] flex flex-col md:flex-row border-b border-[#050505]">
+  <div class="md:w-1/2 p-6 md:p-12 flex flex-col justify-center border-b md:border-b-0 md:border-r border-[#050505]">
+    <h1 class="font-bold text-6xl md:text-8xl uppercase tracking-tighter leading-[0.85] mb-8">
+      We Forge<br/>Brands<br/><span class="text-[#0000FF]">That Last.</span>
+    </h1>
+    <a href="/contact" class="inline-block self-start border border-[#050505] px-6 py-3 font-mono text-sm uppercase tracking-widest hover:bg-[#0000FF] hover:text-[#FFF8E7] hover:border-[#0000FF] transition-colors">
+      Let's Build Something Bold
+    </a>
+  </div>
+  <div class="md:w-1/2 bg-[#050505] flex items-center justify-center p-12 overflow-hidden relative group">
+    <!-- Dithered/Wireframe Graphic Placeholder -->
+    <div class="absolute inset-0 opacity-20 pointer-events-none" style="background-image: radial-gradient(#FFF8E7 1px, transparent 1px); background-size: 20px 20px;"></div>
+    <div class="w-32 h-32 border border-[#0000FF] rotate-45 group-hover:rotate-90 transition-transform duration-700 ease-in-out"></div>
+  </div>
+</section>

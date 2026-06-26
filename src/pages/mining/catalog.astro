@@ -1,0 +1,15 @@
+---
+// src/pages/mining/catalog.astro
+import MiningLayout from '../../layouts/MiningLayout.astro';
+import SpecSheetGrid from '../../components/mining/SpecSheetGrid.jsx';
+---
+
+<MiningLayout title="BLACK FORGE | Full Catalog">
+  <main>
+    <div class="px-6 py-12 bg-black text-white">
+      <h1 class="font-sans font-bold text-4xl uppercase tracking-tighter">Complete Catalog</h1>
+      <p class="font-mono text-sm mt-4 text-[#FFD700]">REF: BF-INV-2026 // ALL CATEGORIES</p>
+    </div>
+    <SpecSheetGrid client:load />
+  </main>
+</MiningLayout>

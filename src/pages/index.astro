@@ -1,0 +1,129 @@
+---
+// src/pages/index.astro
+import AgencyLayout from '../layouts/AgencyLayout.astro';
+---
+
+<AgencyLayout title="BLACK FORGE | Creative Agency">
+  
+  <!-- HERO SECTION: The Spark -->
+  <section class="grid grid-cols-1 md:grid-cols-2 min-h-[60vh] md:min-h-[80vh] border-b border-black">
+    
+    <!-- Narrative Text -->
+    <div class="flex flex-col justify-center p-5 md:p-12 md:border-r border-black">
+      <h1 class="font-sans font-bold text-[11vw] sm:text-5xl md:text-8xl uppercase tracking-tighter leading-[0.85] mb-6 md:mb-8">
+        We build <br/>
+        brands that <br/>
+        people remember.
+      </h1>
+      <p class="font-mono text-xs md:text-sm leading-relaxed max-w-md opacity-80 mb-3 md:mb-4">
+        At Black Forge, we don't just create ads, we shape brands, spark conversations, and build experiences that connect with people in the real world and online.
+      </p>
+      <p class="font-mono text-xs md:text-sm leading-relaxed max-w-md opacity-80">
+        From bold brand strategy to high-impact campaigns, we help businesses stand out, stay relevant, and grow with confidence.
+      </p>
+    </div>
+
+    <!-- Visual Evidence (1-bit dithered image style) -->
+    <div class="relative bg-black flex items-center justify-center p-8 md:p-12 overflow-hidden group min-h-[200px] md:min-h-0">
+      <div class="absolute inset-0 opacity-40 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] pointer-events-none mix-blend-overlay"></div>
+      <div class="font-mono text-white/20 text-xs uppercase tracking-widest text-center group-hover:scale-105 transition-transform duration-700">
+        [ Visual_Evidence.jpg ]<br/>
+        <span class="text-[#0044FF]">*1-BIT DITHER RENDER*</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE DIVIDER -->
+  <div class="border-b border-black bg-[#0044FF] text-[#FFF8E7] py-2 md:py-3 overflow-hidden whitespace-nowrap font-mono text-[9px] md:text-[10px] uppercase tracking-widest">
+    <div class="inline-flex animate-[marquee_25s_linear_infinite]">
+      <span class="px-2">STRATEGY /// SCRIPTWRITING /// CONTENT CREATION /// BRAND IDENTITY /// DIGITAL INFRASTRUCTURE /// VIDEO PRODUCTION /// TRADITIONAL MEDIA /// ATL ADVERTISING /// BTL MARKETING ///&nbsp;</span>
+      <span class="px-2">STRATEGY /// SCRIPTWRITING /// CONTENT CREATION /// BRAND IDENTITY /// DIGITAL INFRASTRUCTURE /// VIDEO PRODUCTION /// TRADITIONAL MEDIA /// ATL ADVERTISING /// BTL MARKETING ///&nbsp;</span>
+    </div>
+  </div>
+
+  <!-- WHAT WE DO GRID -->
+  <section id="work" class="border-b border-black bg-[#FFF8E7]">
+    <div class="p-5 md:p-12 border-b border-black">
+      <h2 class="font-sans font-bold text-2xl md:text-5xl uppercase tracking-tighter mb-3 md:mb-4">What We Do</h2>
+      <p class="font-mono text-xs md:text-sm max-w-2xl opacity-70">
+        We specialize in creating strong, unforgettable brands through a smart mix of digital marketing, digital advertising, scriptwriting, video production, content creation, and traditional media solutions.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
+      <div class="p-5 md:p-8 flex flex-col border-b sm:border-r border-black">
+        <h3 class="font-bold text-lg md:text-xl uppercase mb-3 md:mb-4">Brand Building</h3>
+        <p class="font-mono text-[11px] md:text-xs opacity-70">We help brands find their voice, define their identity, and build a presence that truly connects with their audience.</p>
+      </div>
+      <div class="p-5 md:p-8 flex flex-col border-b sm:border-r-0 md:border-r border-black">
+        <h3 class="font-bold text-lg md:text-xl uppercase mb-3 md:mb-4">Digital Marketing</h3>
+        <p class="font-mono text-[11px] md:text-xs opacity-70">From strategy to execution, we create digital campaigns that drive awareness, engagement, and results.</p>
+      </div>
+      <div class="p-5 md:p-8 flex flex-col border-b sm:border-r border-black">
+        <h3 class="font-bold text-lg md:text-xl uppercase mb-3 md:mb-4">Digital Advertising</h3>
+        <p class="font-mono text-[11px] md:text-xs opacity-70">We craft ad campaigns that cut through the noise and put your brand in front of the right people at the right time.</p>
+      </div>
+      <div class="p-5 md:p-8 flex flex-col border-b border-black">
+        <h3 class="font-bold text-lg md:text-xl uppercase mb-3 md:mb-4">Scriptwriting</h3>
+        <p class="font-mono text-[11px] md:text-xs opacity-70">Great stories sell. We develop sharp, creative scripts for commercials, branded content, radio, social media, and more.</p>
+      </div>
+      <div class="p-5 md:p-8 flex flex-col border-b sm:border-r border-black">
+        <h3 class="font-bold text-lg md:text-xl uppercase mb-3 md:mb-4">Video Production</h3>
+        <p class="font-mono text-[11px] md:text-xs opacity-70">From concept to camera to final cut, we produce quality visual content that brings your brand to life.</p>
+      </div>
+      <div class="p-5 md:p-8 flex flex-col border-b sm:border-r-0 md:border-r border-black">
+        <h3 class="font-bold text-lg md:text-xl uppercase mb-3 md:mb-4">Traditional Media</h3>
+        <p class="font-mono text-[11px] md:text-xs opacity-70">We create campaigns across TV, radio, print, and outdoor platforms that still make a lasting impact.</p>
+      </div>
+      <div class="p-5 md:p-8 flex flex-col border-b sm:border-r border-black">
+        <h3 class="font-bold text-lg md:text-xl uppercase mb-3 md:mb-4">ATL Advertising</h3>
+        <p class="font-mono text-[11px] md:text-xs opacity-70">Big ideas for wide reach. We develop mass-market campaigns designed to build awareness.</p>
+      </div>
+      <div class="p-5 md:p-8 flex flex-col border-b md:border-b-0 border-black">
+        <h3 class="font-bold text-lg md:text-xl uppercase mb-3 md:mb-4">BTL Marketing</h3>
+        <p class="font-mono text-[11px] md:text-xs opacity-70">Targeted, direct, and action-driven. We connect your brand with people on a more personal level.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAPABILITIES GRID (Our Approach) -->
+  <section id="approach" class="grid grid-cols-1 md:grid-cols-2 border-b border-black bg-[#FFF8E7]">
+    
+    <div class="p-5 md:p-12 border-b md:border-b-0 md:border-r border-black">
+      <h2 class="font-sans font-bold text-2xl md:text-5xl uppercase tracking-tighter mb-8 md:mb-12">Our Approach</h2>
+      <div class="font-mono text-xs uppercase space-y-5 md:space-y-6 opacity-70">
+        <div class="flex gap-3 md:gap-4"><span class="text-[#0044FF]">[01]</span> <div><p class="font-bold">We listen</p><p class="text-[10px] normal-case opacity-80 mt-1">Every great campaign starts with understanding your brand, your audience, and your goals.</p></div></div>
+        <div class="flex gap-3 md:gap-4"><span class="text-[#0044FF]">[02]</span> <div><p class="font-bold">We create</p><p class="text-[10px] normal-case opacity-80 mt-1">We turn insight into strong creative ideas that feel fresh, relevant, and effective.</p></div></div>
+        <div class="flex gap-3 md:gap-4"><span class="text-[#0044FF]">[03]</span> <div><p class="font-bold">We produce</p><p class="text-[10px] normal-case opacity-80 mt-1">From scripts to shoots to final delivery, we handle the process with precision and energy.</p></div></div>
+        <div class="flex gap-3 md:gap-4"><span class="text-[#0044FF]">[04]</span> <div><p class="font-bold">We launch</p><p class="text-[10px] normal-case opacity-80 mt-1">We place your message where it matters most, across digital and traditional channels.</p></div></div>
+        <div class="flex gap-3 md:gap-4"><span class="text-[#0044FF]">[05]</span> <div><p class="font-bold">We grow</p><p class="text-[10px] normal-case opacity-80 mt-1">We keep refining, improving, and building momentum for your brand.</p></div></div>
+      </div>
+    </div>
+
+    <div class="p-5 md:p-12 flex flex-col justify-between">
+      <div>
+        <h2 class="font-sans font-bold text-2xl md:text-5xl uppercase tracking-tighter mb-4 md:mb-6">Why Black Forge?</h2>
+        <p class="font-mono text-xs md:text-sm leading-relaxed mb-4 md:mb-6">
+          Because in today's market, average doesn't win attention.
+        </p>
+        <p class="font-mono text-xs md:text-sm leading-relaxed mb-4 md:mb-6">
+          At Black Forge, we combine strategy, creativity, storytelling, and execution to help brands grow with purpose. We understand culture, consumer behavior, and the fast-changing media landscape — and we use that insight to create work that actually works.
+        </p>
+        <p class="font-mono text-xs md:text-sm leading-relaxed mb-6 md:mb-8 font-bold text-[#0044FF]">
+          We're bold with ideas, sharp with strategy, and serious about results.
+        </p>
+      </div>
+      <a href="/contact" class="inline-flex justify-between items-center border border-black px-5 md:px-6 py-3 md:py-4 hover:bg-[#0044FF] hover:text-white hover:border-[#0044FF] transition-all font-mono text-xs uppercase font-bold w-full">
+        <span>Let's Build Something Bold</span>
+        <span>→</span>
+      </a>
+    </div>
+
+  </section>
+</AgencyLayout>
+
+<style>
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+</style>

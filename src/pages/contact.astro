@@ -1,0 +1,11 @@
+---
+// src/pages/contact.astro
+import AgencyLayout from '../layouts/AgencyLayout.astro';
+import AgencyContactForm from '../components/agency/AgencyContactForm.jsx';
+---
+
+<AgencyLayout title="BLACK FORGE | Contact">
+  <main class="min-h-[75vh] md:min-h-[85vh] flex items-center justify-center p-4 md:p-6 border-b border-[#050505]">
+    <AgencyContactForm client:load />
+  </main>
+</AgencyLayout>
