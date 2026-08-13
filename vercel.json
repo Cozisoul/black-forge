@@ -1,0 +1,27 @@
+{
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "mining.black-forge.co.za"
+        }
+      ],
+      "destination": "/mining/$1"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/mining/:match*",
+      "has": [
+        {
+          "type": "host",
+          "value": "black-forge.co.za"
+        }
+      ],
+      "destination": "https://mining.black-forge.co.za/:match*",
+      "permanent": true
+    }
+  ]
+}
