@@ -10,25 +10,30 @@ export default function ProcurementForm() {
     setStatus('TRANSMITTING');
     const formData = new FormData(e.target);
 
-    const { error } = await supabase
-      .from('mining_rfq')
-      .insert([
-        {
-          procurement_officer: formData.get('procurement_officer'),
-          mine_site_name: formData.get('mine_site_name'),
-          target_shaft: formData.get('target_shaft'),
-          equipment_category: formData.get('equipment_category'),
-          urgency_level: formData.get('urgency_level'),
-          manifest_details: formData.get('manifest_details')
-        }
-      ]);
+    try {
+      const { error } = await supabase
+        .from('mining_rfq')
+        .insert([
+          {
+            procurement_officer: formData.get('procurement_officer'),
+            mine_site_name: formData.get('mine_site_name'),
+            target_shaft: formData.get('target_shaft'),
+            equipment_category: formData.get('equipment_category'),
+            urgency_level: formData.get('urgency_level'),
+            manifest_details: formData.get('manifest_details')
+          }
+        ]);
 
-    if (error) {
-      console.error("SYS_ERR:", error);
+      if (error) {
+        console.error("SYS_ERR:", error);
+        setStatus('ERROR');
+      } else {
+        setStatus('CONFIRMED');
+        e.target.reset();
+      }
+    } catch (err) {
+      console.error("NETWORK_ERR:", err);
       setStatus('ERROR');
-    } else {
-      setStatus('CONFIRMED');
-      e.target.reset();
     }
   };
 
