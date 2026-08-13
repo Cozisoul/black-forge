@@ -1,14 +1,14 @@
 {
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/:path*",
       "has": [
         {
           "type": "host",
           "value": "mining.black-forge.co.za"
         }
       ],
-      "destination": "/mining/$1"
+      "destination": "/mining/:path*"
     }
   ],
   "redirects": [
