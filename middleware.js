@@ -5,15 +5,15 @@ export const config = {
 export default function middleware(request) {
   const url = new URL(request.url);
 
-  // Check if the request is for the mining subdomain
   if (url.hostname === 'mining.black-forge.co.za') {
     
-    // Skip if it's already requesting the /mining path to avoid infinite loops
-    if (!url.pathname.startsWith('/mining')) {
-      // Rewrite the URL internally to /mining/...
+    // Check if the request is for a static asset (e.g., CSS, JS, images)
+    // Astro puts compiled assets in /_astro/, and we also check for file extensions.
+    const isAsset = url.pathname.startsWith('/_astro/') || url.pathname.match(/\.[a-zA-Z0-9]+$/);
+
+    if (!isAsset && !url.pathname.startsWith('/mining')) {
       url.pathname = `/mining${url.pathname === '/' ? '' : url.pathname}`;
       
-      // Vercel Edge Middleware uses the x-middleware-rewrite header to trigger a rewrite
       return new Response(null, {
         headers: {
           'x-middleware-rewrite': url.toString(),
