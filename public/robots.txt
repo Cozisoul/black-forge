@@ -1,0 +1,8 @@
+# Black Forge - Robots.txt
+# Allow all search engines to crawl both the agency and mining sites
+
+User-agent: *
+Allow: /
+
+# Sitemap (Astro can auto-generate this with @astrojs/sitemap)
+Sitemap: https://black-forge.co.za/sitemap-index.xml

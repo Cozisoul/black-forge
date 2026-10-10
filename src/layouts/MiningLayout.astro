@@ -1,11 +1,48 @@
 ---
 // src/layouts/MiningLayout.astro
 import '../styles/global.css';
+import SEO from '../components/SEO.astro';
 
 interface Props {
   title: string;
+  description?: string;
+  keywords?: string;
 }
-const { title } = Astro.props;
+const { title, description, keywords } = Astro.props;
+
+const defaultDescription = 'Black Forge Underground Supply — reliable mining equipment, safety gear, PPE, ventilation, pumps, and tools for underground mining operations in South Africa.';
+const defaultKeywords = 'mining supplies South Africa, underground mining equipment, mining PPE supplier, mine safety gear, ventilation products mining, mining tools supplier Johannesburg, mine procurement, mining consumables, Black Forge mining';
+
+const miningJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Store",
+  "name": "Black Forge Underground Supply",
+  "url": "https://mining.black-forge.co.za",
+  "logo": "https://black-forge.co.za/bf-logo.png",
+  "description": description || defaultDescription,
+  "email": "dave@black-forge.co.za",
+  "areaServed": {
+    "@type": "Country",
+    "name": "South Africa"
+  },
+  "makesOffer": [
+    { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Hand Tools & Workshop Equipment" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "PPE & Mine Safety Gear" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Ventilation Products" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Hoses & Fluid Transfer" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Pumps & Dewatering Equipment" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Electrical & Lighting" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Lifting & Rigging" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Fasteners & Consumables" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Maintenance Support Equipment" } }
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Johannesburg",
+    "addressRegion": "Gauteng",
+    "addressCountry": "ZA"
+  }
+};
 ---
 
 <!doctype html>
@@ -13,13 +50,14 @@ const { title } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <!-- THE SHADOW PROTOCOL: Absolute Search Engine Exclusion -->
-    <meta name="robots" content="noindex, nofollow, noarchive" />
-    <meta name="googlebot" content="noindex, nofollow" />
-    
     <title>{title}</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <SEO
+      title={title}
+      description={description || defaultDescription}
+      keywords={keywords || defaultKeywords}
+      jsonLd={miningJsonLd}
+    />
   </head>
   
   <body class="m-0 p-0 antialiased overflow-x-hidden bg-[#F4F4F4] text-[#000000] selection:bg-[#FFD700] selection:text-black">
@@ -28,7 +66,7 @@ const { title } = Astro.props;
     <header class="flex justify-between items-center px-4 md:px-6 py-3 md:py-4 border-b border-black bg-[#F4F4F4] sticky top-0 z-50">
       <a href="/mining" class="flex items-center gap-3 md:gap-4 no-underline text-inherit">
         <div class="w-3 h-3 md:w-4 md:h-4 bg-black"></div>
-        <div class="font-sans font-bold text-base md:text-xl uppercase tracking-tighter leading-none">
+        <div class="font-sans font-bold text-base md:text-xl uppercase tracking-tighter leading-none hidden sm:block">
           BLACK FORGE<br/>
           <span class="font-mono text-[8px] md:text-[10px] tracking-widest text-black/50">UNDERGROUND SUPPLY</span>
         </div>
@@ -75,8 +113,8 @@ const { title } = Astro.props;
           <p class="opacity-50 text-[9px] md:text-[10px] leading-relaxed">SUPPLYING THE TOOLS THAT KEEP UNDERGROUND OPERATIONS MOVING.</p>
         </div>
         <div class="md:text-right opacity-50">
-          <p>PROCUREMENT@BLACKFORGE.CO.ZA</p>
-          <p class="hidden md:block">RESTRICTED ACCESS // NOT FOR PUBLIC DISTRIBUTION</p>
+          <p><a href="mailto:dave@black-forge.co.za" class="hover:text-[#FFD700]">DAVE@BLACK-FORGE.CO.ZA</a></p>
+          <p class="hidden md:block mt-2">RESTRICTED ACCESS // NOT FOR PUBLIC DISTRIBUTION</p>
         </div>
       </div>
     </footer>

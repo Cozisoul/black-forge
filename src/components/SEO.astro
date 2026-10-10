@@ -1,0 +1,75 @@
+---
+// src/components/SEO.astro
+// Reusable SEO, AEO, and GEO component for all pages
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalUrl?: string;
+  ogImage?: string;
+  ogType?: string;
+  jsonLd?: object;
+  keywords?: string;
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  canonicalUrl = Astro.url.href,
+  ogImage = '/bf-logo.png',
+  ogType = 'website',
+  jsonLd,
+  keywords,
+  noindex = false,
+} = Astro.props;
+
+const siteUrl = 'https://black-forge.co.za';
+const fullOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
+---
+
+<!-- Primary Meta Tags -->
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+{keywords && <meta name="keywords" content={keywords} />}
+{noindex ? (
+  <meta name="robots" content="noindex, nofollow" />
+) : (
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+)}
+
+<!-- Canonical URL -->
+<link rel="canonical" href={canonicalUrl} />
+
+<!-- Open Graph / Facebook / WhatsApp / LinkedIn -->
+<meta property="og:type" content={ogType} />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={fullOgImage} />
+<meta property="og:site_name" content="Black Forge" />
+<meta property="og:locale" content="en_ZA" />
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content={canonicalUrl} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={fullOgImage} />
+
+<!-- GEO Tags (Geographic targeting for South Africa) -->
+<meta name="geo.region" content="ZA-GP" />
+<meta name="geo.placename" content="Johannesburg" />
+<meta name="geo.position" content="-26.2041;28.0473" />
+<meta name="ICBM" content="-26.2041, 28.0473" />
+
+<!-- AEO / GEO: JSON-LD Structured Data -->
+{jsonLd && (
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+)}
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png" />
+<link rel="manifest" href="/favicon_io/site.webmanifest" />
